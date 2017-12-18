@@ -3,7 +3,6 @@ import React from 'react'
 import { bool } from 'prop-types'
 import classnames from 'classnames'
 import { withStyles } from 'material-ui/styles'
-import type { Node } from 'react'
 
 import FlipCardSide from './FlipCardSide'
 
@@ -13,7 +12,6 @@ function FlipCardBack(
     classes: { back },
     ...props
   }: {
-    children: Node,
     className?: string,
     classes: { back: string },
   },

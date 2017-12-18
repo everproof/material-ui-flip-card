@@ -10,8 +10,8 @@ function FlipCardSide({
   classes: { hidden, side },
   showing,
 }: {
-  children: Node,
-  className: string,
+  children?: Node,
+  className?: string,
   classes: { hidden: string, side: string },
   showing: boolean,
 }) {
@@ -21,6 +21,8 @@ function FlipCardSide({
     </div>
   )
 }
+
+FlipCardSide.defaultProps = { children: <div />, className: '' }
 
 export default withStyles({
   hidden: { opacity: 0, visibility: 'hidden' },
