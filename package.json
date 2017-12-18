@@ -14,8 +14,7 @@
     "test": "npm run format && npm run lint && flow && npm run flow:coverage && jest --coverage",
     "test:watch": "jest --watch",
     "precommit": "npm test",
-    "prepush": "npm run precommit && npm run build",
-    "postinstall": "npm run build"
+    "prepush": "npm run precommit && npm run build"
   },
   "author": {
     "name": "Rhys Gevaux",
