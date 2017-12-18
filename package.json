@@ -1,6 +1,6 @@
 {
   "name": "material-ui-flip-card",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An extension of material-ui's Card to allow it to flip.",
   "main": "lib/index.js",
   "module": "es/index.js",
