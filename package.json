@@ -13,6 +13,8 @@
     "lint": "eslint src --ext .js,.jsx",
     "test": "npm run format && npm run lint && flow && npm run flow:coverage && jest --coverage",
     "test:watch": "jest --watch",
+    "precommit": "npm test",
+    "prepush": "npm run precommit && npm run build",
     "postinstall": "npm run build"
   },
   "author": {
@@ -71,6 +73,7 @@
     "flow-bin": "0.56.0",
     "flow-coverage-report": "0.4.0",
     "flow-typed": "2.2.3",
+    "husky": "0.14.3",
     "jest": "21.2.1",
     "prettier-eslint-cli": "4.6.1",
     "react-dom": "15.6.2",
