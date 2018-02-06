@@ -1,20 +1,21 @@
 {
   "name": "material-ui-flip-card",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "An extension of material-ui's Card to allow it to flip.",
   "main": "lib/index.js",
-  "module": "es/index.js",
   "scripts": {
-    "build": "npm run build:env && npm run build:es",
-    "build:env": "rimraf lib && rollup -c --environment BUILD:production -o lib/index.js -f umd",
-    "build:es": "rimraf es && rollup -c --environment BUILD:production -o es/index.js -f es",
+    "build": "npm run build:clean && npm run build:lib && npm run build:flow",
+    "build:clean": "rimraf lib",
+    "build:lib": "babel -d lib src",
+    "build:flow": "flow-copy-source src lib",
     "format": "prettier-eslint --write \"src/**/*.{js,jsx}\"",
     "flow:coverage": "flow-coverage-report -i 'src/**/*.js' -i 'src/**/*.jsx' -t html -t json -t text --threshold 90",
     "lint": "eslint src --ext .js,.jsx",
     "test": "npm run format && npm run lint && flow && npm run flow:coverage && jest --coverage",
     "test:watch": "jest --watch",
     "precommit": "npm test",
-    "prepush": "npm run precommit && npm run build"
+    "prepush": "npm run precommit && npm run build",
+    "prepublish": "npm run prepush"
   },
   "author": {
     "name": "Rhys Gevaux",
@@ -70,6 +71,7 @@
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.6.1",
     "flow-bin": "0.64.0",
+    "flow-copy-source": "1.2.2",
     "flow-coverage-report": "0.4.1",
     "flow-typed": "2.3.0",
     "husky": "0.14.3",
@@ -77,11 +79,7 @@
     "prettier-eslint-cli": "4.7.0",
     "react-dom": "15.6.2",
     "react-test-renderer": "15.6.2",
-    "rimraf": "2.6.2",
-    "rollup": "0.55.3",
-    "rollup-plugin-babel": "3.0.3",
-    "rollup-plugin-commonjs": "8.3.0",
-    "rollup-plugin-node-resolve": "3.0.2"
+    "rimraf": "2.6.2"
   },
   "peerDependencies": {
     "material-ui": ">=1.0.0-beta.26",
