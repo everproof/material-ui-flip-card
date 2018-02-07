@@ -27,6 +27,10 @@
     "type": "git",
     "url": "https://github.com/everproof/material-ui-flip-card.git"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "jest": {
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
