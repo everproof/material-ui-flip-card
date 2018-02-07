@@ -1,6 +1,6 @@
 {
   "name": "material-ui-flip-card",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An extension of material-ui's Card to allow it to flip.",
   "main": "lib/index.js",
   "scripts": {
@@ -27,6 +27,10 @@
     "type": "git",
     "url": "https://github.com/everproof/material-ui-flip-card.git"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "jest": {
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
